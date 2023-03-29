@@ -1,6 +1,8 @@
 FROM node:10
 
-COPY package.json ./
+WORKDIR /user/src/app
+
+COPY ./ ./
 
 RUN npm install
 
