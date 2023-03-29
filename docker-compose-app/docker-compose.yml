@@ -1,0 +1,10 @@
+version: '3'
+services: #이미지를 한번에 생성 (두 컨테이너는 하나로 묶인것임)
+  redis-server:
+    image: 'redis'
+  node-app: # container
+    build: .             # 도커 파일 위치(현재 폴더에 있음)
+    ports:
+      - '5000:8082'
+
+# 컴포즈로 묶어놓은 것은 compose up 이라는명령어 사용해 한 번에 실행시킬 수 있음
